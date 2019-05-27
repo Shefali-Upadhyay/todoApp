@@ -7,8 +7,6 @@ document.getElementById('add').addEventListener('click', () => {
   }
 });
 
-
-
 //user pressed enter
 //if there is any text inside the task field, add the text to the todo list
 document.getElementById('task').addEventListener('keydown', function (e) {
@@ -19,11 +17,14 @@ document.getElementById('task').addEventListener('keydown', function (e) {
 });
 
 let addItem = (value) => {
-  $("#todo").append(`<li>
-  <div class="custom-control custom-checkbox mb-3">
-    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-    <label class="custom-control-label" for="customCheck">${value}</label>
-    <button type="button" class="btn btn-danger" id="delete"><i class="fas fa-trash"></i></button>
-  </div>
-</li>`);
+  $('#todo').append(`<li class="pb-2">
+  <input type="checkbox">
+  <label>${value}</label>
+  <button type="button" class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
+  </li>`);
+  $('#task').val("");
 }
+
+$('#todo').on('click', '.delete', function(){
+  $(this).parent().remove();
+});
