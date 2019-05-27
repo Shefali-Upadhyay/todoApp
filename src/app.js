@@ -9,13 +9,14 @@ document.getElementById('add').addEventListener('click', () => {
 
 //user pressed enter
 //if there is any text inside the task field, add the text to the todo list
-document.getElementById('task').addEventListener('keydown', function (e) {
+document.getElementById('task').addEventListener('keydown', (e) => {
   let value = this.value;
   if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value) {
     addItem(value);
   }
 });
 
+//add function
 let addItem = (value) => {
   $('#todo').append(`<li class="pb-2">
   <input type="checkbox">
@@ -25,6 +26,7 @@ let addItem = (value) => {
   $('#task').val("");
 }
 
-$('#todo').on('click', '.delete', function(){
+//delete function
+$('#todo').on('click', '.delete', () => {
   $(this).parent().remove();
 });
