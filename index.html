@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Content Type Meta tag -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--Responsive Viewport Meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    
+    <title>TO-DO LIST</title>
+
+    <!-- Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    
+  </head>
+
+  <body>
+
+    <div class="container bg-warning mt-5 py-5">
+      <h1 class="title text-center"><i class="fas fa-clipboard-list"></i> TO-DO LIST</h1>
+      <div class="container-fluid bg-transparent">
+        <div class="container input-group py-4">
+          <input type="text" id="task" placeholder="Enter Task" class="form-control">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" id="add"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="container-fluid bg-white border rounded border-dark">
+          <ul class="list-unstyled py-4" id="todo">
+            <li>
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                <label class="custom-control-label" for="customCheck">Coffee</label>
+                <button type="button" class="btn btn-danger" id="delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <!-- <script type="text/javascript" src="./dist/utils.js"></script>  -->
+    <script type="text/javascript" src="./dist/app.js"></script> 
+
+  </body>
+
+</html>
