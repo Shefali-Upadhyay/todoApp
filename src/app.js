@@ -9,7 +9,7 @@ document.getElementById('add').addEventListener('click', () => {
 
 //user pressed enter
 //if there is any text inside the task field, add the text to the todo list
-document.getElementById('task').addEventListener('keydown', (e) => {
+document.getElementById('task').addEventListener('keydown', function (e) {
   let value = this.value;
   if ((e.code === 'Enter' || e.code === 'NumpadEnter') && value) {
     addItem(value);
