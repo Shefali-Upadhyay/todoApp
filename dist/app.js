@@ -7,15 +7,15 @@ var addTask = function addTask() {
   if (value != '') {
     var li = document.createElement('li');
     li.setAttribute('class', 'pb-2');
-    li.innerHTML = "<input type=\"checkbox\">\n      <label>".concat(value, "</label>\n      <button type=\"button\" class=\"btn btn-danger delete\"><i class=\"fas fa-trash\"></i></button>");
+    li.innerHTML = "\n    <div class=\"continer pt-2 border rounded border-warning px-3\" id=\"task-view\">\n      <label class=\"chkbox-container\">".concat(value, "\n        <input type=\"checkbox\">\n        <span class=\"checkmark rounded\"></span>\n        <button class=\"btn btn-danger delete\">\n          <i class=\"fas fa-trash\"></i>\n        </button>\n      </label>\n    </div>");
     document.getElementById('todo').appendChild(li);
     document.getElementById('task').value = '';
   }
 }; //delete function
 
 
-$("#todo").on("click", ".delete", function (event) {
-  $(event.currentTarget).parent().remove();
+document.getElementById("todo").addEventListener("click", function (event) {
+  event.target.closest("li").remove();
 }); //user clicked on the add button
 //if there is any text inside the task field, add the text to the todo list
 
