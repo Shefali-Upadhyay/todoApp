@@ -5,14 +5,12 @@ let addTask = () => {
     let li=document.createElement('li');
     li.setAttribute('class', 'pb-2');
     li.innerHTML=`
-    <div class="continer pt-2 border rounded border-warning px-3" id="task-view">
-      <label class="chkbox-container">${value}
-        <input type="checkbox">
-        <span class="checkmark rounded"></span>
-        <button class="btn btn-danger" id="delete">
-          <i class="fas fa-trash"></i>
-        </button>
-      </label>
+    <div class="continer py-3 border rounded border-warning px-3" id="task-view">
+      <input id="check" type="checkbox" />
+      <label id="lab">${value}</label>
+      <button class="btn btn-danger" id="delete">
+        <i class="fas fa-trash"></i>
+      </button>
     </div>`;
     document.getElementById('todo').appendChild(li);
     document.getElementById('task').value = '';
@@ -20,14 +18,12 @@ let addTask = () => {
 }
 
 //delete function
-document.getElementById('todo').addEventListener('click', event => { 
+document.getElementById('todo').addEventListener('click', (event) => { 
   if(event.target.closest('#delete')) 
   { 
     event.target.closest('li').remove(); 
   } 
 });
-
-
 
 //user clicked on the add button
 //if there is any text inside the task field, add the text to the todo list
@@ -46,13 +42,3 @@ document.getElementById('refresh').addEventListener('click', () => {
   document.getElementById('todo').innerHTML = '';
   document.getElementById('task').value = '';
 });
-
-//hiding the checkbox and the delete button
-// var hide = () => {
-//   var taskView = document.getElementById('task-view');
-//   taskView.onmouseover = () => {
-//     document.getElementById('delete').style.display = 'inline';
-//     document.getElementById('checkmark').tagName.style.display = 'inline';
-//   }
-// };
-// hide();
